@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('property/create', [
+    'as' => 'property.create', 'uses' => 'PropertyController@create',
+]);
+
+Route::get('analytic/update', [
+    'as' => 'analytic.update', 'uses' => 'AnalyticController@update',
+]);
