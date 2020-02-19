@@ -16,8 +16,8 @@ class CreatePropertyAnalyticsTable extends Migration
         Schema::create('property_analytics', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
-            $table->integer('property_id')->unique();
-            $table->integer('analytic_type_id')->unique();
+            $table->integer('property_id');
+            $table->integer('analytic_type_id');
             $table->text('value');
         });
     }

@@ -19,7 +19,7 @@ class CreatePropertiesTable extends Migration
             $table->string('suburb');
             $table->string('state');
             $table->string('country');
-            $table->uuid('guid');
+            $table->uuid('guid')->nullable();
         });
     }
 
