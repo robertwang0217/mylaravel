@@ -23,6 +23,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        // bind analytic interface and repository
+        $this->app->bind(
+            'App\Repositories\PropertyAnalytic\PropertyAnalyticInterface',
+            'App\Repositories\PropertyAnalytic\PropertyAnalyticRepository'
+        );
     }
 }

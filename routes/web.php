@@ -29,3 +29,8 @@ Route::post('analytic/attach/{propertyId}', [
 Route::get('property-analytics/{propertyId}', [
     'as' => 'property.analytics', 'uses' => 'AnalyticController@getAnalyticsByPropertyId',
 ]);
+
+// Get a summary of all property analytics for an inputted suburb/state/country
+Route::get('property-analytics-summary/{type}/{value}', [
+    'as' => 'property.analytics.summary', 'uses' => 'PropertyAnalyticController@getPropertyAnalyticSummary',
+]);

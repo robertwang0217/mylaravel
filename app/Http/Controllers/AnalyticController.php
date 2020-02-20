@@ -45,5 +45,5 @@ class AnalyticController extends Controller
  		    'success'  => true,
  		    'data' => $analytics
  		]);
- 	}   
+ 	}
 }
