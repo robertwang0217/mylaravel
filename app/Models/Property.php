@@ -10,8 +10,11 @@ class Property extends Model
         'guid', 'suburb', 'state', 'country'
     ];
 
-    public function analyticTypes()
-    {
+    public function analyticTypes() {
         return $this->belongsToMany(AnalyticType::class, 'property_analytics', 'property_id');
+    }
+
+    public function propertyAnalytics() {
+    	return $this->hasMany(PropertyAnalytic::class, 'property_id');
     }
 }

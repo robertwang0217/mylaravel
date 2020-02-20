@@ -15,8 +15,13 @@ class PropertyAnalyticController extends Controller
     public function getPropertyAnalyticSummary( $type, $value ) {
 
     	$results = $this->propertyAnalytic->getSummaryByTypeAndValue( $type, $value );
-    	info(11111);
-    	info($results);
-
+    	
+    	if( is_string($results) ) {
+    		return response()->json([
+    		    'success'  => false,
+    		    'message' => $results
+    		], 422);
+    	}
+    	return response()->json( $results );
     }
 }
