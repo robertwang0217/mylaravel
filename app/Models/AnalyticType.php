@@ -14,6 +14,6 @@ class AnalyticType extends Model
 
     public function properties()
     {
-        return $this->belongsToMany(Company::class, 'property_analytics');
+        return $this->belongsToMany(Property::class, 'property_analytics', 'analytic_type_id');
     }
 }

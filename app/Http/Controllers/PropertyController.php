@@ -7,8 +7,9 @@ use App\Models;
 
 class PropertyController extends Controller
 {
+	// Add a new property
     public function create( Request $request ) {
-
+        
     	$property = Models\Property::create( $request->all() );
 
     	if( !$property->id ) {

@@ -18,7 +18,7 @@ class CreatePropertyAnalyticsTable extends Migration
             $table->timestamps();
             $table->integer('property_id');
             $table->integer('analytic_type_id');
-            $table->text('value');
+            $table->text('value')->nullable();
         });
     }
 

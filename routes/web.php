@@ -15,10 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('property/create', [
+// Add a new property
+Route::post('property/create', [
     'as' => 'property.create', 'uses' => 'PropertyController@create',
 ]);
 
-Route::get('analytic/update', [
-    'as' => 'analytic.update', 'uses' => 'AnalyticController@update',
+// Add/Update an analytic to a property
+Route::post('analytic/attach/{id}', [
+    'as' => 'analytic.attach', 'uses' => 'AnalyticController@attach',
 ]);
