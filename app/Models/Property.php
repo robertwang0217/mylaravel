@@ -12,6 +12,6 @@ class Property extends Model
 
     public function analyticTypes()
     {
-        return $this->belongsToMany(Company::class, 'property_analytics', 'property_id');
+        return $this->belongsToMany(AnalyticType::class, 'property_analytics', 'property_id');
     }
 }

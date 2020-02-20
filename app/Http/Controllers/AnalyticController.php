@@ -19,11 +19,31 @@ class AnalyticController extends Controller
  			], 422);
  		}
 
- 		$analytic->properties()->attach( $propertyId );
+ 		$analytic->properties()->syncWithoutDetaching( $propertyId );
 
  		return response()->json([
  		    'success'  => true,
  		    'data' => $analytic
+ 		]);
+ 	}
+
+ 	// Get all analytics for an inputted property
+ 	public function getAnalyticsByPropertyId( $propertyId ) {
+
+ 		$property = Models\Property::find( $propertyId );
+
+ 		$analytics = $property->analyticTypes()->get();
+
+ 		if( $property->analyticTypes()->first() == null ) {
+ 			return response()->json([
+ 			    'success'  => false,
+ 			    'message' => 'No analytics'
+ 			], 422);
+ 		}
+
+ 		return response()->json([
+ 		    'success'  => true,
+ 		    'data' => $analytics
  		]);
  	}   
 }
