@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "a15fc2b3-6a35-4cba-9204-0a392f71bd93",
+		"name": "mylaravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add a new property",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"suburb\": \"Parramatta\",\n\t \"state\": \"NSW\",\n\t \"country\": \"Australia\"\n}"
+				},
+				"url": {
+					"raw": "{{rootUrl}}/property/create",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"property",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all analytics for an inputted property",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"suburb\": \"Parramatta\",\n\t \"state\": \"NSW\",\n\t \"country\": \"Australia\"\n}"
+				},
+				"url": {
+					"raw": "{{rootUrl}}/property-analytics/1",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"property-analytics",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a summary of all property analytics for an inputted state",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"suburb\": \"Parramatta\",\n\t \"state\": \"NSW\",\n\t \"country\": \"Australia\"\n}"
+				},
+				"url": {
+					"raw": "{{rootUrl}}/property-analytics-summary/state/nsw",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"property-analytics-summary",
+						"state",
+						"nsw"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a summary of all property analytics for an inputted suburb",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"suburb\": \"Parramatta\",\n\t \"state\": \"NSW\",\n\t \"country\": \"Australia\"\n}"
+				},
+				"url": {
+					"raw": "{{rootUrl}}/property-analytics-summary/suburb/parramatta",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"property-analytics-summary",
+						"suburb",
+						"parramatta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a summary of all property analytics for an inputted country",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"suburb\": \"Parramatta\",\n\t \"state\": \"NSW\",\n\t \"country\": \"Australia\"\n}"
+				},
+				"url": {
+					"raw": "{{rootUrl}}/property-analytics-summary/country/australia",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"property-analytics-summary",
+						"country",
+						"australia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add/Update an analytic to a property",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t \"name\": \"test analytic name\",\n\t \"units\": \"abc\",\n\t \"is_numeric\": \"1\",\n\t \"num_decimal_places\": \"1\"\n}"
+				},
+				"url": {
+					"raw": "{{rootUrl}}/analytic/attach/1",
+					"host": [
+						"{{rootUrl}}"
+					],
+					"path": [
+						"analytic",
+						"attach",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

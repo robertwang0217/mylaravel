@@ -11,6 +11,7 @@ class PropertyAnalyticController extends Controller
 	{
 	    $this->propertyAnalytic = $propertyAnalytic;
 	}
+    
     // Get a summary of all property analytics for an inputted suburb/state/country
     public function getPropertyAnalyticSummary( $type, $value ) {
 

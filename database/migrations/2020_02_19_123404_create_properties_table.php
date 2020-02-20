@@ -13,6 +13,7 @@ class CreatePropertiesTable extends Migration
      */
     public function up()
     {
+        // create properties table
         Schema::create('properties', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();

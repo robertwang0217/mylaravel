@@ -13,6 +13,7 @@ class InsertSampleData extends Migration
      */
     public function up()
     {
+        // insert sample data
         DB::statement("
             INSERT INTO `properties` (`id`, `created_at`, `updated_at`, `suburb`, `state`, `country`, `guid`)
             VALUES

@@ -13,6 +13,7 @@ class CreatePropertyAnalyticsTable extends Migration
      */
     public function up()
     {
+        // create property_analytics table
         Schema::create('property_analytics', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
