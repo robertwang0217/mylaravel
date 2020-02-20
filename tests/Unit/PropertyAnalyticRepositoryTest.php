@@ -15,20 +15,33 @@ class PropertyAnalyticRepositoryTest extends TestCase
      */
     public function testCalculate()
     {
-    	$results = [ 1, 1, 0, 0 ];
+        // Simple unit test sample
+        $this->control = app()->make( \App\Repositories\PropertyAnalytic\PropertyAnalyticRepository::class );
 
-    	$this->control = app()->make( \App\Repositories\PropertyAnalytic\PropertyAnalyticRepository::class );
+    	$input = [ 5, 10, 0, 0 ];
 
-    	$results = $this->control->calculate( $results, 2 );
+    	$results = $this->control->calculate( $input, 2 );
 
     	$expect = array (
 			  'min' => 0,
-			  'max' => 1,
-			  'median' => 0.5,
+			  'max' => 10,
+			  'median' => 3.75,
 			  'emptyPercent' => 50,
 			  'valuePercent' => 50,
 		);
+        $this->assertEquals($expect, $results);
 
+        $input = [ 10, 20, 0, 0 ];
+
+        $results = $this->control->calculate( $input, 2 );
+
+        $expect = array (
+              'min' => 0,
+              'max' => 20,
+              'median' => 7.5,
+              'emptyPercent' => 50,
+              'valuePercent' => 50,
+        );
         $this->assertEquals($expect, $results);
     }
 }
