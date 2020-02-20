@@ -8,7 +8,7 @@ use App\Models;
 class AnalyticController extends Controller
 {
  	// Add/Update an analytic to a property
- 	public function attach( Request $request, $propertyId ) {
+ 	public function attachToProperty( Request $request, $propertyId ) {
  		
  		$analytic = Models\AnalyticType::updateOrCreate( $request->all() );
 

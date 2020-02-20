@@ -21,6 +21,11 @@ Route::post('property/create', [
 ]);
 
 // Add/Update an analytic to a property
-Route::post('analytic/attach/{id}', [
-    'as' => 'analytic.attach', 'uses' => 'AnalyticController@attach',
+Route::post('analytic/attach/{propertyId}', [
+    'as' => 'analytic.attach', 'uses' => 'AnalyticController@attachToProperty',
+]);
+
+// Get all analytics for an inputted property
+Route::get('property-analytics/{propertyId}', [
+    'as' => 'property.analytics', 'uses' => 'AnalyticController@getAnalyticsByPropertyId',
 ]);
