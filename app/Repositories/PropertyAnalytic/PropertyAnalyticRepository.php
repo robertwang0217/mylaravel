@@ -41,6 +41,17 @@ class PropertyAnalyticRepository implements PropertyAnalyticInterface
         	$results = array_merge( $results, $numbers );
         }
 
+        $data = $this->calculate( $results, $emptyCounts );
+
+        
+
+        return [
+        	'success' => true,
+        	'data' => $data
+        ];
+    }
+
+    public function calculate( $results, $emptyCounts ) {
         $min = min( $results );
         $max = max( $results );
         $counts = count( $results );
@@ -49,14 +60,11 @@ class PropertyAnalyticRepository implements PropertyAnalyticInterface
         $valuePercent = ( $counts - $emptyCounts ) * 100 / $counts;
 
         return [
-        	'success' => true,
-        	'data' => [
-        		'min' => $min,
-        		'max' => $max,
-        		'median' => $avg,
-        		'emptyPercent' => $emptyPercent,
-        		'valuePercent' => $valuePercent
-        	]
+            'min' => $min,
+            'max' => $max,
+            'median' => $avg,
+            'emptyPercent' => $emptyPercent,
+            'valuePercent' => $valuePercent
         ];
     }
 }
